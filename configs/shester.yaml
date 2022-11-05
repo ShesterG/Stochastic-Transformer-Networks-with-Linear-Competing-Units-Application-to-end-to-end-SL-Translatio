@@ -1,13 +1,13 @@
 name: example_experiment
 data:
-    data_path: /content/drive/MyDrive/Sign_Language_Videos/dataset/GSL240/
+    data_path: /content/drive/MyDrive/Sign_Language_Videos/dataset/ALL240/
     version: phoenix_2014_trans
     sgn: sign 
     txt: text
     gls: gloss
-    train: GSL240.train
-    dev:   GSL240.dev
-    test:  GSL240.test
+    train: [GSL240.train, NSI240.train, XKI240.train, ZIB240.1.train, ZIB240.2.train, ZIB240.3.train, ZIB240.4.train, SFS240.1.train, SFS240.2.train, SFS240.3.train, SFS240.4.train, SFS240.5.train, ZSL240.1.train, ZSL240.2.train]
+    dev:   [GSL240.dev, NSI240.dev, XKI240.dev, ZIB240.dev, SFS240.dev, ZSL240.dev]
+    test:  [GSL240.test, NSI240.test, XKI240.test, ZIB240.test, SFS240.test, ZSL240.test]
     feature_size: 1662
     level: word
     txt_lowercase: true
@@ -15,7 +15,7 @@ data:
     random_train_subset: -1
     random_dev_subset: -1
     gls_vocab: ./data/gls.vocab
-    txt_vocab: /content/drive/MyDrive/Sign_Language_Videos/dataset/GSL240/txt.vocab
+    txt_vocab: /content/drive/MyDrive/Sign_Language_Videos/dataset/ALL240/txt.vocab
     batch_size: 32
 testing:
     translation_beam_sizes:
@@ -37,7 +37,7 @@ training:
     reset_scheduler: true
     reset_optimizer: true
     random_seed: 44
-    model_dir:  "./SavedModels/example22" 
+    model_dir:  "/content/drive/MyDrive/Sign_Language_Videos/dataset/ALL240/SavedModels/example22" 
     recognition_loss_weight: 0
     translation_loss_weight: 1.0
     kl_weight: 1
